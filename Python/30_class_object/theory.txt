@@ -1,0 +1,41 @@
+*what is difference between method and function
+
+method:-
+1-method is define within the class
+2-method call through object
+3-syntax:-obj_name.method_name
+4-always first parameter of method is self
+5-method is one of the function but its define in the 
+  class ex-list,tuple,set
+
+function:-
+1-function is define outside the function
+2-call directly
+3-syntax:-function()
+4-does not exit self
+5-Built in function.example-len(),min(),max()21
+
+
+*constructor:
+1-__init__ this method called as constructor
+2-constructor is special method 
+3-"self" is always thr frist parameter of __inti__ method
+4-the object is create,constructor automatically called
+5-this is the superpower of constructor
+6-but we have to call the other method explicitly
+
+
+*self:-
+1-self is the refernce of current object of the class
+2-their are two component in class:-
+    - attribute
+    -method
+3-we can assess it only through object
+     print(obj.attribute_name)
+4-we can use self 3 places:
+    (1)method define ex:__init__,any other class method
+    (2)attribute name
+    (3)method call inside the class
+          ex-def __init__(self,speed):
+                  self.speed=speed
+                  

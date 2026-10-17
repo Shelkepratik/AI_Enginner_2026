@@ -1,0 +1,5 @@
+What is the superclass of Python's exception hierarchy?
+=>Answer: BaseException is the root superclass of Python's exception hierarchy.
+ Exception is its subclass and is the base class for most common application errors.
+Remember: BaseException → Exception → specific errors.
+
