@@ -1,0 +1,12 @@
+📚 Python Session 31 – PRACTICE QUESTION - Linux Session 1
+
+1. Navigate to your home directory using a Linux command.
+2. Display the path of your current working directory.
+3. Navigate to the parent directory of your current directory.
+4. Create a directory named student_data.
+5. Navigate inside the student_data directory.
+6. Create a file named notes.txt using the Vim editor and write at least three lines of text in it.
+7. Display the contents of notes.txt on the terminal.
+8. Display only the first two lines of notes.txt.
+9. Display only the last two lines of notes.txt.
+10. Rename the file notes.txt to linux_notes.txt.
