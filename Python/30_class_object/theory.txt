@@ -1,3 +1,15 @@
+*class:class is set of rule and 
+it's define the how to behave the object
+- class is buleprint of class 
+- class is create using class keyword
+- class consist of two component:
+    attribute,method
+
+*object-object is used the set of rule create by class
+- object is instance of the class
+syntax=obj_name=class_name()
+
+
 *what is difference between method and function
 
 method:-
@@ -29,7 +41,7 @@ function:-
 1-self is the refernce of current object of the class
 2-their are two component in class:-
     - attribute
-    -method
+    -  method
 3-we can assess it only through object
      print(obj.attribute_name)
 4-we can use self 3 places:
