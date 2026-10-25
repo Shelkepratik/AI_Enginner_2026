@@ -2,6 +2,7 @@ class Time:
     def __init__(self,hourse,minutes):
         self.hourse=hourse
         self.minutes=minutes
+        
     def __str__(self):
         return "{} hours {}".format(self.hourse,self.minutes)
 

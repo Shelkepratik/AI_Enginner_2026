@@ -2,6 +2,7 @@ class school:
     def __init__(self,school_name,city):
         self.school_name=school_name
         self.city=city
+        
     def display_info(self):
         print("school name: ",self.school_name)
         print("school city: ",self.city)
