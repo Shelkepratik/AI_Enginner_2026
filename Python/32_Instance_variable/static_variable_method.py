@@ -1,5 +1,7 @@
 class Employee:
+
     company_name="TCS"#static variable
+    
     def __init__(self,emp_name,dep):#instance variable
         self.emp_name=emp_name
         self.dep=dep
