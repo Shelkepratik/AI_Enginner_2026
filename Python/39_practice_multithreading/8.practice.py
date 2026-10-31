@@ -2,6 +2,7 @@
 Create an object and start it using start().
  Then create another object and call run() directly, and print the current thread name inside run() in both cases. 
 Write a comment explaining the difference."""
+
 from threading import Thread,current_thread
 import time
 
