@@ -20,7 +20,7 @@ method:-
   class ex-list,tuple,set
 
 function:-
-1-function is define outside the function
+1-function is define outside the class
 2-call directly
 3-syntax:-function()
 4-does not exit self
@@ -49,4 +49,9 @@ function:-
     (3)method call inside the class
           ex-def __init__(self,speed):
                   self.speed=speed
+
+5-it allows us to access the object attribute,method
+6-self is not resvered word
+
+
                   

@@ -1,3 +1,2 @@
-python is general purpose programming lanuage
-it is object oriented programming languagehello world
+hello world
 welcome to AI Engineer Course

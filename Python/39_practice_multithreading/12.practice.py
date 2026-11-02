@@ -12,4 +12,6 @@ print(t1.name)
 print(current_thread().name)
 print(t1.ident)
 t1.start()
+t1.join()
+print(current_thread().name)#the complete the "report thread" so run the main thread then  print the main thread
 print(t1.ident)
