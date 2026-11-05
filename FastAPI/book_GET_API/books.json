@@ -1,0 +1,43 @@
+
+{
+    "B001": {
+        "title": "Wings of Fire",
+        "author": "APJ Abdul Kalam",
+        "genre": "Autobiography",
+        "pages": 180,
+        "price": 299,
+        "available": true
+    },
+    "B002": {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "genre": "Fiction",
+        "pages": 208,
+        "price": 250,
+        "available": true
+    },
+    "B003": {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "genre": "Self-help",
+        "pages": 320,
+        "price": 450,
+        "available": true
+    },
+    "B004": {
+        "title": "Rich Dad Poor Dad",
+        "author": "Robert Kiyosaki",
+        "genre": "Finance",
+        "pages": 336,
+        "price": 399,
+        "available": false
+    },
+    "B005": {
+        "title": "Ikigai",
+        "author": "Hector Garcia",
+        "genre": "Self-help",
+        "pages": 208,
+        "price": 299,
+        "available": true
+    }
+}
