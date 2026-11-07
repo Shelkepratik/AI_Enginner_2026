@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">FASTAPI PROJECT</p>
+      <h1>Patient Management</h1>
+      <p class="subtitle">Manage patient records from your FastAPI backend</p>
+    </div>
+    <span class="api-status" id="apiStatus">Checking API...</span>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <article class="stat-card"><span>Total patients</span><strong id="totalPatients">—</strong></article>
+      <article class="stat-card"><span>Normal BMI</span><strong id="normalCount">—</strong></article>
+      <article class="stat-card"><span>Needs attention</span><strong id="attentionCount">—</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><h2>Patient records</h2><p>View, search, add, update or delete a patient.</p></div>
+        <button class="primary" id="showAddBtn">+ Add patient</button>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search by patient ID, name or city">
+        <button class="secondary" id="refreshBtn">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Patient ID</th><th>Name</th><th>City</th><th>Age</th><th>Height (m)</th><th>Weight (kg)</th><th>BMI</th><th>Verdict</th><th>Actions</th></tr></thead>
+          <tbody id="patientTable"><tr><td colspan="9" class="empty">Loading patients...</td></tr></tbody>
+        </table>
+      </div>
+      <p class="message" id="message" role="status"></p>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="patientModal">
+    <div class="modal-card">
+      <div class="modal-heading"><div><p class="eyebrow">PATIENT DETAILS</p><h2 id="modalTitle">Add patient</h2></div><button class="close" id="closeModal" aria-label="Close">×</button></div>
+      <form id="patientForm">
+        <div class="form-grid">
+          <label>Patient ID<input name="id" id="patientId" maxlength="4" minlength="4" required placeholder="P006"></label>
+          <label>Full name<input name="name" id="name" maxlength="10" required placeholder="Patient name"></label>
+          <label>City<input name="city" id="city" maxlength="20" required placeholder="Pune"></label>
+          <label>Age<input name="age" id="age" type="number" min="1" max="120" required></label>
+          <label>Gender<select name="gender" id="gender" required><option value="">Select gender</option><option value="male">Male</option><option value="female">Female</option></select></label>
+          <label>Height (metres)<input name="height" id="height" type="number" min="0.01" max="9.99" step="0.01" required></label>
+          <label>Weight (kg)<input name="weight" id="weight" type="number" min="0.01" max="99.99" step="0.1" required></label>
+        </div>
+        <p class="form-hint" id="formHint">Enter all required details.</p>
+        <div class="modal-actions"><button type="button" class="secondary" id="cancelBtn">Cancel</button><button type="submit" class="primary" id="saveBtn">Save patient</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
