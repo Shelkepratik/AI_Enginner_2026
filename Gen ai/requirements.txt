@@ -1,0 +1,10 @@
+langchain
+langchain-openai
+fastapi
+python-dotenv
+langchain_groq
+langchain-anthropic
+langchain-huggingface
+huggingface_hub 
+streamlit
+langchain-ollama

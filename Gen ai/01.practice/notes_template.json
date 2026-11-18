@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "level",
+        "points",
+        "topic"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "Explain {topic} for a {level} student in {points} bullet points",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
