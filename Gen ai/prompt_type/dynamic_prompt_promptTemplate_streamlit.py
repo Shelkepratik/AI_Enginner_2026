@@ -1,43 +1,66 @@
+
+import streamlit as st
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
-import streamlit as st
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-tmpl = "write a poem about {subject} in a {tone} tone with {lines} lines"
+st.set_page_config(page_title="AI Poem Generator")
 
-prompt_obj = PromptTemplate(
-    template=tmpl,
+st.title("AI Poem Generator")
+st.write("Generate poems using LangChain and Groq.")
+
+# Prompt Template
+prompt = PromptTemplate(
+    template="Write a poem about {subject} in a {tone} tone with {lines} lines.",
     input_variables=["subject", "tone", "lines"]
 )
 
-st.title("poem Genratore")
+# User Input
+subject = st.text_input("Enter subject:")
 
-user_subject = st.text_input("provide a subject")
-user_tone = st.text_input("provide the tone:")
-user_lines = st.text_input("Enter the lines of poem to create:",min_value=1,max_value=50)
-
-complete_prompt = prompt_obj.invoke(
-    {
-        "subject": user_subject,
-        "tone": user_tone,
-        "lines": user_lines
-    }
+tone = st.selectbox(
+    "Select tone:",
+    ["Simple", "Medium", "Funny", "Professional"]
 )
 
-final_prompt = complete_prompt.text
-
-llm = ChatGroq(
-    model="openai/gpt-oss-120b",
-    api_key=os.getenv("openai_api_key"),
-    temperature=0
+lines = st.number_input(
+    "Enter number of lines:",
+    min_value=1,
+    max_value=50,
+    value=5
 )
 
-if st.button("Generate"):
-    if final_prompt:
-        result = llm.invoke(final_prompt)
-        st.write(result.content)
+# Generate
+if st.button("Generate Poem"):
+
+    if not subject.strip():
+        st.warning("Please enter a subject.")
+
+    elif not os.getenv("GROQ_API_KEY"):
+        st.error("GROQ_API_KEY is missing from your .env file.")
+
     else:
-        st.warning("please submit your question")
+        try:
+            llm = ChatGroq(
+                model="openai/gpt-oss-120b",
+                api_key=os.getenv("openai/gpt-oss-20b"),
+                temperature=0.7
+            )
+
+            chain = prompt | llm
+
+            with st.spinner("Generating poem..."):
+                result = chain.invoke({
+                    "subject": subject,
+                    "tone": tone,
+                    "lines": int(lines)
+                })
+
+            st.subheader("Generated Poem")
+            st.write(result.content)
+
+        except Exception as e:
+            st.error(f"Error: {e}")
